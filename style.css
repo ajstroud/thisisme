@@ -1,0 +1,40 @@
+body {
+  margin: 0px;
+}
+
+header {
+  padding: 10px;
+  display : flex;
+  justify-content: space-between;
+  background-color: lightgray;
+}
+
+header h4 {
+  margin: 0px;
+  padding: 5px;
+}
+
+#header-links {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  color: darkgray;
+}
+
+#header-links div {
+  padding: 5px;
+  text-align: center;
+  border: 2px solid #666666;
+  border-radius: 100px;
+  margin: 0px 5px;
+}
+
+#header-links div a {
+  color: #888888;
+  text-decoration: none;
+}
+
+#header-links div:hover {
+  background-color: black;
+  color: lightgray;
+}
