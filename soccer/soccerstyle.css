@@ -1,0 +1,15 @@
+header {
+  background-color: lightgreen;
+  padding: 10px;
+  color: black;
+}
+
+body {
+  margin: 0px;
+  background-color: green;
+  color: white;
+}
+
+h2 {
+  padding: 0px 10px;
+}
