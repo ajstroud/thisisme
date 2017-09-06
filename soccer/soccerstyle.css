@@ -22,3 +22,27 @@ body {
 h2 {
   padding: 0px 10px;
 }
+
+#scoreboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#scoreboard table {
+  border: 2px solid white;
+  border-collapse: collapse;
+}
+
+tbody tr {
+  border-top: 1px solid lightgrey;
+}
+
+.team-name {
+  border-right: 1px solid lightgrey;
+}
+
+th, td {
+  text-align: left;
+  padding: 1px 5px;
+}
