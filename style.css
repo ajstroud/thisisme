@@ -7,18 +7,21 @@ header {
   display : flex;
   justify-content: space-between;
   background-color: lightgray;
+  font-family: 'Raleway', sans-serif;
 }
 
 header h4 {
   margin: 0px;
   padding: 5px;
+  font-size: 20px;
 }
 
 #header-links {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
   color: darkgray;
+  font-size: 12px;
 }
 
 #header-links div {
