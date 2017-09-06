@@ -2,12 +2,21 @@ header {
   background-color: lightgreen;
   padding: 10px;
   color: black;
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+}
+
+header h3 {
+  margin: 0px;
+  padding: 5px;
+  font-size: 20px;
 }
 
 body {
   margin: 0px;
   background-color: green;
   color: white;
+  font-family: 'Inconsolata', monospace;
 }
 
 h2 {
