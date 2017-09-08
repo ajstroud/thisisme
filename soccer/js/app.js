@@ -1,6 +1,6 @@
 
-class App() {
+class App {
   constructor() {
-    
+
   }
 }
