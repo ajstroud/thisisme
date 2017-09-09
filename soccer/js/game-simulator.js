@@ -14,7 +14,7 @@ class GameSimulator {
     let ballPos = 0;
     this.doAttack = false;
 
-    for(int i = 0; i < 90; i++) {
+    for(let i = 0; i < 90; i++) {
       ballPos = this.computeBallMovement(modifiers, ballPos);
 
       if(this.doAttack) {
@@ -54,10 +54,10 @@ class GameSimulator {
     let homeOffAdj = this.computeOffFromDef(awayDefRaw);
     let awayOffAdj = this.computeOffFromDef(homeDefRaw);
 
-    let modifiers = [];
-    modifiers[0] = (homeOffRaw + homeOffAdj)/2.0;
-    modifiers[1] = (awayOffRaw + awayOffAdj)/2.0;
-    return modifiers;
+    let atkmodifiers = [];
+    atkmodifiers[0] = (homeOffRaw + homeOffAdj)/2.0;
+    atkmodifiers[1] = (awayOffRaw + awayOffAdj)/2.0;
+    return atkmodifiers;
   }
 
   correctRating(rating) {
@@ -98,16 +98,93 @@ class GameSimulator {
 
   //TODO finish the attack running code
   runAttack(modifier) {
-    let rando = Math.random();
-    if(rando < (1.0 - modifier*(15.0/26.0))) {
+    return this.runC1(modifier);
+  }
+
+  runC1(modifier) {
+    console.log('C1');
+    let randc1 = Math.random();
+
+    if(randc1 < 1 - modifier*(15.0/26.0)) {
       //dead
       return false;
-    } else if(rando < (1.0 - modifier*(3.0/26.0))) {
+    } else if(randc1 < 1 - modifier*(3.0/26.0)) {
       //to C2
-    } else if(rando < (1.0 - modifier*1.0/13.0)) {
+      return this.runC2(modifier);
+    } else if(randc1 < 1 - modifier*(1.0/13.0)) {
       //to C3
+      return this.runC3(modifier);
     } else {
       //to FK1
+      return this.runFK1(modifier);
+    }
+  }
+
+  runC2(modifier) {
+    console.log('C2');
+    let randc2 = Math.random();
+
+    if(randc2 < 1 - modifier*(11.0/26.0)) {
+      //dead
+      return false;
+    } else if(randc2 < 1 - modifier*(5.0/26.0)) {
+      //to C3
+      return this.runC3(modifier);
+    } else if(randc2 < 1 - modifier*(1.0/26.0/26.0)) {
+      //to FK2
+      return this.runFK2(modifier);
+    } else {
+      //to PK
+      return this.runPK(modifier);
+    }
+  }
+
+  runFK1(modifier) {
+    console.log('FK1');
+    let randfk1 = Math.random();
+
+    if(randfk1 < 1 - modifier*(5.0/26.0)) {
+      //dead
+      return false;
+    } else if(randfk1 < 1 - modifier*(1.0/26.0)) {
+      //to C3
+      return this.runC3(modifier);
+    } else {
+      //goal
+      return true;
+    }
+  }
+
+  runC3(modifier) {
+    console.log('C3');
+    let randc3 = Math.random();
+
+    if(randc3 < 1 - modifier*(5.0/26.0)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  runFK2(modifier) {
+    console.log('FK2');
+    let randfk2 = Math.random();
+
+    if(randfk2 < 1 - modifier*(7.0/26.0)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  runPK(modifier) {
+    console.log('PK');
+    let randpk = Math.random();
+
+    if(randpk < 1 - modifier*(10.0/13.0)) {
+      return true;
+    } else {
+      return false;
     }
   }
 }
