@@ -19,9 +19,9 @@ class GameSimulator {
 
       if(this.doAttack) {
         if(ballPos > 0) {
-          this.runAttack(this.attackModifiers[0]);
+          const goalScored = this.runAttack(this.attackModifiers[0]);
         } else {
-          this.runAttack(this.attackModifiers[1]);
+          const goalScored = this.runAttack(this.attackModifiers[1]);
         } // run an attack
 
         this.doAttack = false;
@@ -96,7 +96,6 @@ class GameSimulator {
     return newBallPosition;
   }
 
-  //TODO finish the attack running code
   runAttack(modifier) {
     return this.runC1(modifier);
   }
