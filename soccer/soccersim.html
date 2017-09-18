@@ -11,7 +11,9 @@
     <script src="./js/game.js" defer></script>
     <script src="./js/game-simulator.js" defer></script>
     <script src="./js/sim-screen.js" defer></script>
+    <script src="./js/game-setup-screen.js" defer></script>
     <script src="./js/app.js" defer></script>
+    <script src="./js/script.js" defer></script>
   </head>
   <body>
     <!-- TODO: Add the HTML necessary to make my website -->
@@ -19,35 +21,77 @@
       <h3>Soccer Simulator</h3>
     </header>
 
-    <h2>
-      Simulation Capabilities coming soon!
-    </h2>
+    <div id="game-setup" class="inactive">
+      Game Setup screen container
+      <!-- TODO: add form to create home and away teams and assign skill levels -->
+      <form id="team-creation-form" class="inactive">
 
-    <div id="scoreboard">
+        <div class="team-inputs">
+          <label for="home-city-input">Enter Home Team City:</label>
+          <input type="text" id="home-city-input" placeholder="e.g. San Jose"/>
 
-      <h3>
-        Mock Scoreboard:
-      </h3>
+          <label for="home-name-input">Enter Home Team Name:</label>
+          <input type="text" id="home-name-input" placeholder="e.g. Earthquakes"/>
+        </div>
+        <div class="team-inputs">
+          <label for="away-city-input">Enter Away Team City:</label>
+          <input type="text" id="away-city-input" placeholder="e.g. Los Angeles"/>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Team</th>
-            <th>Score</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="team-name">SJ Earthquakes</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <td class="team-name">LA Galaxy</td>
-            <td>1</td>
-          </tr>
-        </tbody>
-      </table>
+          <label for="away-name-input">Enter Home Team Name:</label>
+          <input type="text" id="away-name-input" placeholder="e.g. Galaxy"/>
+        </div>
+
+        <input type="submit" value="Create Teams"/>
+
+      </form>
+
+      <form id="skill-level-form" class="inactive">
+
+        <div class="team-inputs">
+          <label for="home-off-input">Enter team offensive skill for:</label>
+          <input type="text" id="home-off-input" placeholder="e.g. San Jose"/>  <!-- TODO: specify number range from 0 to 100 -->
+
+          <label for="home-def-input">Enter team defensive skill for:</label>
+          <input type="text" id="home-def-input" placeholder="e.g. Earthquakes"/> <!-- TODO: specify number range from 0 to 100 -->
+        </div>
+        <div class="team-inputs">
+          <label for="away-off-input">Enter team offensive skill for:</label>
+          <input type="text" id="away-off-input" placeholder="e.g. Los Angeles"/> <!-- TODO: specify number range from 0 to 100 -->
+
+          <label for="away-def-input">Enter team defensive skill for:</label>
+          <input type="text" id="away-def-input" placeholder="e.g. Galaxy"/> <!-- TODO: specify number range from 0 to 100 -->
+        </div>
+
+      </form>
+
     </div>
 
+    <div id="simulator">
+
+      <div id="scoreboard">
+        <h3>
+          Scoreboard:
+        </h3>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Team</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="team-name">SJ Earthquakes</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td class="team-name">LA Galaxy</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </body>
 </html>
